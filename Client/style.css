@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #fafafb;
+    --purple: #121212;
+    --lila: #bb86FC;
+    --dark-lila: #3700b3;
+    --green: #03dac6;
+    --red: #cf6679;
+}
+
+body {
+    background: var(--purple);
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    max-width: 80%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.container h2{
+    color: var(--white);
+}
+
+#fecha {
+    padding: 50px 0 5px 0;
+    color: var(--lila)
+}
+
+.agregar-tarea {
+    background-color: var(--white);
+    border-radius: 15px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 70px;
+    margin: 40px 0;
+}
+
+.agregar-tarea input{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+}
+
+.agregar-tarea i {
+    font-size: 50px;
+    color: var(--green);
+}
+
+.agregar-tarea i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.agregar-tarea input:focus{
+    outline: none;
+}
+
+.agregar-tarea input::placeholder {
+    font-size: 1rem;
+}
+
+/*Lista de tareas*/
+
+.lista-tareas h3 {
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.lista-tareas li {
+    display: flex;
+    background: var(--dark-lila);
+    border-radius: 15px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    color: var(--white);
+}
+
+.lista-tareas i {
+    font-size: 25px;
+}
+
+.lista-tareas i:hover {
+    color: var(--green);
+    cursor: pointer;
+}
+
+.lista-tareas > ul p {
+    font-size: 1.2rem;
+}
+
+.estado-hecho {
+    text-decoration: line-through;
+    color: var(--green);
+}

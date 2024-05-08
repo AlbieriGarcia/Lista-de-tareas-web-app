@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="contenedor">
     <div class="fecha">
         <div id="fecha">martes 5 de mar 2024</div>
     </div>
@@ -21,6 +21,53 @@
         <input type="text" id="input" placeholder="estudiar ingles, comprar la cena...">
         <i id="abrir-form" class="fas fa-plus-circle"></i>
     </div>
+
+    <dialog id="modal">     
+        <form action="" method="dialog">
+            
+            <div class="titulo-div">
+                <input type="text" name="Titulo" id="titulo" value="titulo tarea">
+            </div>
+
+            <div>
+                <textarea name="Descripcion" id="descripcion" placeholder="Descripcion..."></textarea>
+            </div>
+
+            <div class="grid">
+                <div class="grid-item-3">
+                    <label for="fecha-form">Fecha</label>
+                    <input type="date" name="Fecha-form" id="fecha-form" value="">
+                </div>
+
+                <div class="grid-item-2">
+                    <label for="categoria">Categoria</label>
+                    <select name="Categoria" id="categoria">
+                        <option value="1">Personal</option>
+                        <option value="2">Trabajo</option>
+                        <option value="3">Compras</option>
+                    </select>
+                </div>
+    
+                <div class="grid-item-1">
+                    <label for="hora">Hora de inicio</label>
+                    <input type="time" name="Hora" id="hora" value="">
+                </div>
+    
+            </div>
+
+            <div>
+                <label for="estado">En curso</label>
+                <input type="radio" name="Estado" value="enCurso" checked>
+
+                <label for="estado">Completado</label>
+                <input type="radio" name="Estado" value="completado">
+            </div>
+            
+            
+            <button type="submit" class="btn-enviar" >Enviar</button>
+            <button type="submit" class="btn-cerrar" id="cerrar-modal">cancelar</button>
+        </form>
+    </dialog>
 
     <div class="lista-tareas">
         <h3>Tareas Pendientes</h3>

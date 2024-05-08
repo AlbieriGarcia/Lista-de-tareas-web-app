@@ -26,22 +26,22 @@
         <form action="" method="dialog">
             
             <div class="titulo-div">
-                <input type="text" name="Titulo" id="titulo" value="titulo tarea">
+                <input type="text" name="title" id="titulo" value="titulo tarea">
             </div>
 
             <div>
-                <textarea name="Descripcion" id="descripcion" placeholder="Descripcion..."></textarea>
+                <textarea name="description" id="descripcion" placeholder="Descripcion..."></textarea>
             </div>
 
             <div class="grid">
                 <div class="grid-item-3">
                     <label for="fecha-form">Fecha</label>
-                    <input type="date" name="Fecha-form" id="fecha-form" value="">
+                    <input type="date" name="date" id="fecha-form" value="">
                 </div>
 
                 <div class="grid-item-2">
                     <label for="categoria">Categoria</label>
-                    <select name="Categoria" id="categoria">
+                    <select name="category" id="categoria">
                         <option value="1">Personal</option>
                         <option value="2">Trabajo</option>
                         <option value="3">Compras</option>
@@ -50,21 +50,21 @@
     
                 <div class="grid-item-1">
                     <label for="hora">Hora de inicio</label>
-                    <input type="time" name="Hora" id="hora" value="">
+                    <input type="time" name="time" id="hora" value="">
                 </div>
     
             </div>
 
             <div>
                 <label for="estado">En curso</label>
-                <input type="radio" name="Estado" value="enCurso" checked>
+                <input type="radio" name="state" value="1" checked>
 
                 <label for="estado">Completado</label>
-                <input type="radio" name="Estado" value="completado">
+                <input type="radio" name=state value="2">
             </div>
             
             
-            <button type="submit" class="btn-enviar" >Enviar</button>
+            <button type="submit" class="btn-enviar" id="enviar-datos">Enviar</button>
             <button type="submit" class="btn-cerrar" id="cerrar-modal">cancelar</button>
         </form>
     </dialog>

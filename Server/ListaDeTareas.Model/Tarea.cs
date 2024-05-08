@@ -14,7 +14,7 @@ namespace ListaDeTareas.Model
         public string Date { get; set; }
         public string Time { get; set; }
         public string Category { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
 
     }
 }

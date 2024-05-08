@@ -2,12 +2,14 @@ const contenedor = document.querySelector('#contenedor')
 const fecha = document.querySelector('#fecha');
 const lista = document.querySelector('#lista');
 const input = document.querySelector('#input');
-const btnForm = document.querySelector('#abrir-form');
-const btnCerrarForm = document.querySelector('#cerrar-modal')
+const btnAbrirForm = document.querySelector('#abrir-form');
+const btnCerrarForm = document.querySelector('#cerrar-modal');
+const btnEnviarDatos = document.querySelector('#enviar-datos');
+const datos_form = document.querySelector('form')
 
-//Agregar tarea
+//Abrir formulario
 
-btnForm.addEventListener("click",()=>{
+btnAbrirForm.addEventListener("click",()=>{
     modal.showModal();
 })
 
@@ -15,9 +17,17 @@ btnCerrarForm.addEventListener("click",()=>{
     modal.close()
 })
 
+// obtener datos del formulario
+datos_form.addEventListener('submit', e =>{
+    const data = Object.fromEntries(
+        new FormData(e.target)
+    )
+    enviarDatos(data);
+})
+
 //Obtener tareas
 document.addEventListener('DOMContentLoaded', function() {
-    // Llamada a la función para cargar los datos del JSON
+    // Llama a la función para cargar los datos de la API
     cargarDatos();
 });
 
@@ -45,5 +55,21 @@ async function cargarDatos() {
         // Agregar el nuevo div al contenedor de la lista
         datosDiv.appendChild(datoDiv);
     });
-       //hola
+    
+}
+
+
+function enviarDatos(data) {
+    fetch("https://localhost:7058/api/Tareas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", 
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+    location.reload();
 }

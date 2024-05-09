@@ -12,7 +12,7 @@ namespace ListaDeTareas.Data.Repositories
         Task<IEnumerable<Tarea>> GetAllTareas();
         Task<Tarea> GetTareaById(int id);
         Task<bool> InsertTarea(Tarea tarea);
-        Task<bool> UpdateTarea(Tarea tarea);
-        Task<bool> DeleteTarea(Tarea tarea);
+        Task<bool> UpdateTarea(int id, Tarea tarea);
+        Task<bool> DeleteTarea(int id);
     }
 }

@@ -21,13 +21,13 @@ namespace ListaDeTareas.Data.Repositories
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
-        public async Task<bool> DeleteTarea(Tarea tarea)
+        public async Task<bool> DeleteTarea(int id)
         {
             var db = dbConnection();
 
             var sql = @"DELETE FROM tareas WHERE id = @Id";
 
-            var result = await db.ExecuteAsync(sql, new { Id = tarea.Id });
+            var result = await db.ExecuteAsync(sql, new { Id = id });
 
             return result > 0;
         }
@@ -66,7 +66,7 @@ namespace ListaDeTareas.Data.Repositories
             return result > 0;
         }
 
-        public async Task<bool> UpdateTarea(Tarea tarea)
+        public async Task<bool> UpdateTarea(int Id, Tarea tarea)
         {
             var db = dbConnection();
 
@@ -80,7 +80,7 @@ namespace ListaDeTareas.Data.Repositories
                          WHERE id = @Id";
 
             var result = await db.ExecuteAsync(sql, new
-            { tarea.Id, tarea.Title, tarea.Description, tarea.Date, tarea.Time, tarea.Category, tarea.State });
+            { Id, tarea.Title, tarea.Description, tarea.Date, tarea.Time, tarea.Category, tarea.State });
 
             return result > 0;
         }

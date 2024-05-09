@@ -41,23 +41,23 @@ namespace ListaDeTareas.Controllers
             return Created("created", created);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateTarea([FromBody] Tarea tarea)
+        [HttpPut("{Id}")]
+        public async Task<IActionResult> UpdateTarea(int Id, [FromBody] Tarea tarea)
         {
             if (tarea == null)
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            await _tareaRepository.UpdateTarea(tarea);
+            await _tareaRepository.UpdateTarea(Id, tarea);
 
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTarea(int id)
         {
-            await _tareaRepository.DeleteTarea(new Tarea { Id = id });
+            await _tareaRepository.DeleteTarea( id );
 
             return NoContent();
         }

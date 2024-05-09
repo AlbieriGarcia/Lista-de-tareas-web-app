@@ -1,8 +1,7 @@
-const contenedor = document.querySelector('#contenedor')
-const contenedorEdicion = document.querySelector('.contenedor-editar')
+const contenedor = document.querySelector('#contenedor');
+const contenedorEdicion = document.querySelector('.contenedor-editar');
 const fecha = document.querySelector('#fecha');
 const lista = document.querySelector('#lista');
-const input = document.querySelector('#input');
 const btnAbrirForm = document.querySelector('#abrir-form');
 const btnCerrarForm = document.querySelector('#cerrar-modal');
 const datos_form = document.querySelector('form');
@@ -11,6 +10,8 @@ const datos_form = document.querySelector('form');
 //Abrir formulario
 
 btnAbrirForm.addEventListener("click",()=>{
+    const input = document.querySelector('#input').value;
+    document.getElementById('titulo').value = input;
     modal.showModal();
 })
 

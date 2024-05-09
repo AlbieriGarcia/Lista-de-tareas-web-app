@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS tareas (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
   description VARCHAR(500),
-  date DATE NOT NULL,
-  time TIME,
+  date VARCHAR(30) NOT NULL,
+  time VARCHAR(8),
   category varchar(45) NOT NULL,
   state varchar(1) NOT NULL
 );

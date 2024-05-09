@@ -1,20 +1,23 @@
-const contenedor = document.querySelector('#contenedor');
 const contenedorEdicion = document.querySelector('.contenedor-editar');
 const fecha = document.querySelector('#fecha');
-const lista = document.querySelector('#lista');
 const btnAbrirForm = document.querySelector('#abrir-form');
 const btnCerrarForm = document.querySelector('#cerrar-modal');
 const datos_form = document.querySelector('form');
 
+// Direccion de la API
+let apiUrl = 'https://localhost:7058/api/Tareas';
 
-//Abrir formulario
+ObtenerFecha(); // inserta la fecha en el html
+
+//Abrir ventana modal Con el formulario de Creacion
 
 btnAbrirForm.addEventListener("click",()=>{
-    const input = document.querySelector('#input').value;
-    document.getElementById('titulo').value = input;
-    modal.showModal();
+    const input = document.querySelector('#input').value;    //Obtiene la etiqueta con el id input y sus atributos
+    document.getElementById('titulo').value = input;     //Selecciona el id title del form y inserta el valor del input
+    modal.showModal();     // Hace visible el modal del formulario
 })
 
+// Cierra el modal
 btnCerrarForm.addEventListener("click",()=>{
     modal.close()
 })
@@ -33,19 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
     cargarDatos();
 });
 
+// Funcion para cargar todos los datos o tareas de la API
 async function cargarDatos() {
-
-    const response = await fetch('https://localhost:7058/api/Tareas');
-
+    const response = await fetch(apiUrl); // llama la api por get
     const datos = await response.json();
-
-    console.log(datos)
         
     const datosDiv = document.getElementById('lista');
     datosDiv.innerHTML = ''; 
 
     datos.forEach(dato => {
-        // Crear un nuevo div para cada dato
+        // Crea un nuevo div para cada dato
         const datoDiv = document.createElement('div');
         datoDiv.innerHTML = `
             <li class="elemento" id=${dato.id}>
@@ -73,15 +73,13 @@ async function cargarDatos() {
             const id = e.currentTarget.getAttribute("data");
             console.log(id)
             eliminarTarea(id);
-        })
-         
-    });
-    
+        })   
+    });   
 }
 
-
+// Funcion para enviar los datos por POST
 function enviarDatos(data) {
-    fetch("https://localhost:7058/api/Tareas", {
+    fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 
@@ -91,16 +89,15 @@ function enviarDatos(data) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        location.reload();
+        location.reload(); // recarga la pagina para ver los cambios
     })
     .catch(error => console.error(error));
 }
 
-// editar
-
-function enviarEditDatos(data, tarea) {
+// Funcion para Enviar los datos por PUT y actualizar
+function enviarEditDatos(data, id) {
     console.log(data);
-    fetch("https://localhost:7058/api/Tareas/" + tarea.id, {
+    fetch(apiUrl + '/' + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json", 
@@ -110,34 +107,28 @@ function enviarEditDatos(data, tarea) {
     .then(response => {console.log(response); response.json()})
     .then(data => {
         console.log(data);
-        location.reload();
+        location.reload(); // recarga la pagina para ver los cambios
     })
     .catch(error => console.error(error));
 }
 
 
 async function obtenerTareaPorId(id) {
-
-    const response = await fetch('https://localhost:7058/api/Tareas');
-
-
+    const response = await fetch(apiUrl);
     // obtengo todas las tareas
     const listaTareas = await response.json();
-
     let tarea = {};
-    
-    // saco la tarea que coincide con el id que seleccione
+    // saca la tarea que coincide con el id que seleccione
     listaTareas.forEach(d =>{
         if(d.id == id){
             tarea = d;
         }
     })
-
-    editarTarea(tarea)
-            
+    formularioEditar(tarea)           
 }
 
-function editarTarea(tarea){
+// Funcion para crear el formulario de edicion
+function formularioEditar(tarea){
     const formulario = 
     `
     <dialog id="modalEdicion">     
@@ -198,23 +189,23 @@ function editarTarea(tarea){
         modalEdicion.close();
     });
 
-    // Event listener para enviar los datos
-    const datos_form_edit = contenedorEdicion.querySelector('form');
+    const datosFormularioEdicion = contenedorEdicion.querySelector('form');
 
-    datos_form_edit.addEventListener('submit', e => {
+    // Event listener para enviar los datos
+    datosFormularioEdicion.addEventListener('submit', e => {
         e.preventDefault(); 
         const data = Object.fromEntries(new FormData(e.target));
-        enviarEditDatos(data, tarea);
+        const id = tarea.id;
+        enviarEditDatos(data, id);
         modalEdicion.close(); 
     });
 
-    modalEdicion.showModal();
+    modalEdicion.showModal(); // Muestra el formularo para editar
 }
 
-// Borrar
-
+//Funcion para eliminar las tareas por ID
 function eliminarTarea(id){
-    fetch("https://localhost:7058/api/Tareas/" + id, {
+    fetch(apiUrl + '/' + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json", 
@@ -223,7 +214,13 @@ function eliminarTarea(id){
     .then(response => {console.log(response); response.json()})
     .then(data => {
         console.log(data);
-        location.reload();
+        location.reload(); // recarga la pagina para ver los cambios
     })
     .catch(error => console.error(error));
+}
+
+// Obtiene la fecha actual y la inserta en el html 
+function ObtenerFecha(){
+    const FECHA = new Date();
+    fecha.innerHTML = FECHA.toLocaleDateString('es-MX', {weekday:'long', month:'short', day:'numeric'});
 }

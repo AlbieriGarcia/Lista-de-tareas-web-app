@@ -79,12 +79,6 @@ async function cargarDatos() {
     
 }
 
-lista.addEventListener('click', e => {
-    const elemento = e.target;
-
-})
-
-
 
 function enviarDatos(data) {
     fetch("https://localhost:7058/api/Tareas", {
@@ -166,9 +160,9 @@ function editarTarea(tarea){
                 <div class="grid-item-2">
                     <label for="categoria">Categoria</label>
                     <select name="category" id="categoria">
-                        <option value="1" ${tarea.category === 1 ? 'selected' : ''}>Personal</option>
-                        <option value="2" ${tarea.category === 2 ? 'selected' : ''}>Trabajo</option>
-                        <option value="3" ${tarea.category === 3 ? 'selected' : ''}>Compras</option>
+                        <option value="1" ${tarea.category == 1 ? 'selected' : ''}>Personal</option>
+                        <option value="2" ${tarea.category == 2 ? 'selected' : ''}>Trabajo</option>
+                        <option value="3" ${tarea.category == 3 ? 'selected' : ''}>Compras</option>
                     </select>
                 </div>
     

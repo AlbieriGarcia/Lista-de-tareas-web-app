@@ -49,8 +49,8 @@ async function cargarDatos() {
         const datoDiv = document.createElement('div');
         datoDiv.innerHTML = `
             <li class="elemento" id=${dato.id}>
-                <i class="far fa-circle co" data="Completado"></i>
-                <p class="text">${dato.title}</p>
+                <i class="${dato.state === '2' ? 'far fa-check-circle co': 'far fa-circle co'}" data="Completado"></i>
+                <p class="${dato.state === '2' ? 'estado-hecho': ''}">${dato.title}</p>
                 <i class="fas fa-trash de" data="${dato.id}" id="eliminar"></i>
             </li>
         `;
@@ -73,10 +73,16 @@ async function cargarDatos() {
             const id = e.currentTarget.getAttribute("data");
             console.log(id)
             eliminarTarea(id);
-        }) 
+        })
+         
     });
     
 }
+
+lista.addEventListener('click', e => {
+    const elemento = e.target;
+
+})
 
 
 
@@ -182,9 +188,9 @@ function editarTarea(tarea){
             </div>
             
             
-            <button type="submit" class="btn-enviar" id="enviar-datos">Enviar</button>
+            <button type="submit" class="btn-enviar" id="enviar-datos">Editar</button>
         </form>
-        <button type="button" class="btn-cerrar" id="cerrar-modal">cancelar</button>
+        <button type="button" class="btn-cerrar" id="cerrar-modal">Cancelar</button>
     </dialog>
     `;
 

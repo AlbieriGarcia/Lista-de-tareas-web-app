@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3Xu2qNsIsEKY5JqcDA0mlwAAAAACAAAAAAAQZgAAAAEAACAAAACliGIzSmvgiPdhJLM7mf4T++TAoE8biGi4N9svagnhQAAAAAAOgAAAAAIAACAAAACvG/hz8SlLuQw3aajOe4K/KDlFen7Ssuf8l2PSuAmVWCAAAABXNeUN+jI7E96MKgSdg2F3wrFf7GVEfrNEy85ZV0CzCkAAAADj/Tl4r7X90ZmvNqJucjXb/T1QKprY+QuBeRnmXcp01JtOtLR6gegjaJuqaMaTEyzmRJDov2dqcgwz7OyKX7qu</EncryptedPassword>
+    <_PublishTargetUrl>ftp://155.254.244.30/www.listadetareas.somee.com</_PublishTargetUrl>
+    <History>True|2024-05-10T16:31:11.8700903Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/07/2024 09:17:04</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/10/2024 11:37:03</publishTime>
+    </File>
+    <File Include="BouncyCastle.Cryptography.dll">
+      <publishTime>04/21/2023 08:06:40</publishTime>
+    </File>
+    <File Include="Dapper.dll">
+      <publishTime>03/06/2024 11:03:30</publishTime>
+    </File>
+    <File Include="Google.Protobuf.dll">
+      <publishTime>11/15/2023 07:29:56</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.dll">
+      <publishTime>01/06/2023 13:16:12</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.Streams.dll">
+      <publishTime>01/06/2023 13:16:12</publishTime>
+    </File>
+    <File Include="K4os.Hash.xxHash.dll">
+      <publishTime>11/08/2022 14:08:14</publishTime>
+    </File>
+    <File Include="ListaDeTareas.Data.dll">
+      <publishTime>05/09/2024 20:54:42</publishTime>
+    </File>
+    <File Include="ListaDeTareas.Data.pdb">
+      <publishTime>05/09/2024 20:54:42</publishTime>
+    </File>
+    <File Include="ListaDeTareas.deps.json">
+      <publishTime>05/10/2024 12:29:18</publishTime>
+    </File>
+    <File Include="ListaDeTareas.dll">
+      <publishTime>05/10/2024 12:29:17</publishTime>
+    </File>
+    <File Include="ListaDeTareas.exe">
+      <publishTime>05/10/2024 12:29:17</publishTime>
+    </File>
+    <File Include="ListaDeTareas.Model.dll">
+      <publishTime>05/09/2024 20:54:38</publishTime>
+    </File>
+    <File Include="ListaDeTareas.Model.pdb">
+      <publishTime>05/09/2024 20:54:38</publishTime>
+    </File>
+    <File Include="ListaDeTareas.pdb">
+      <publishTime>05/10/2024 12:29:17</publishTime>
+    </File>
+    <File Include="ListaDeTareas.runtimeconfig.json">
+      <publishTime>05/09/2024 20:54:50</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 16:14:12</publishTime>
+    </File>
+    <File Include="Microsoft.Win32.SystemEvents.dll">
+      <publishTime>11/15/2019 04:36:56</publishTime>
+    </File>
+    <File Include="MySql.Data.dll">
+      <publishTime>03/18/2024 03:35:52</publishTime>
+    </File>
+    <File Include="runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll">
+      <publishTime>10/18/2022 12:40:14</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll">
+      <publishTime>11/15/2019 04:56:36</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/comerr64.dll">
+      <publishTime>03/18/2024 03:29:08</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/gssapi64.dll">
+      <publishTime>03/18/2024 03:29:08</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/k5sprt64.dll">
+      <publishTime>03/18/2024 03:29:08</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/krb5_64.dll">
+      <publishTime>03/18/2024 03:29:08</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/krbcc64.dll">
+      <publishTime>03/18/2024 03:29:08</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll">
+      <publishTime>11/15/2019 04:54:18</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll">
+      <publishTime>11/15/2019 04:54:20</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll">
+      <publishTime>11/15/2019 04:54:30</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 06:01:34</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>10/16/2021 08:54:10</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>10/16/2021 08:54:36</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>10/16/2021 08:54:30</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/20/2017 14:09:04</publishTime>
+    </File>
+    <File Include="System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>02/15/2023 20:53:48</publishTime>
+    </File>
+    <File Include="System.Drawing.Common.dll">
+      <publishTime>09/18/2018 15:38:14</publishTime>
+    </File>
+    <File Include="System.IO.Pipelines.dll">
+      <publishTime>04/13/2022 13:49:36</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 06:01:34</publishTime>
+    </File>
+    <File Include="System.Security.Permissions.dll">
+      <publishTime>11/15/2019 04:56:44</publishTime>
+    </File>
+    <File Include="System.Text.Encodings.Web.dll">
+      <publishTime>10/18/2022 12:19:30</publishTime>
+    </File>
+    <File Include="System.Text.Json.dll">
+      <publishTime>11/18/2022 12:32:58</publishTime>
+    </File>
+    <File Include="System.Windows.Extensions.dll">
+      <publishTime>11/15/2019 04:56:52</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/10/2024 12:29:34</publishTime>
+    </File>
+    <File Include="ZstdSharp.dll">
+      <publishTime>04/06/2023 08:25:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
